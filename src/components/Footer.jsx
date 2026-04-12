@@ -43,9 +43,9 @@ const Footer = () => {
       <div className="container footer__inner">
         <div className="footer__brand">
           <button className="footer__logo" onClick={scrollToTop}>
-            <span className="footer__logo-bracket">&lt;</span>
-            Dadda
-            <span className="footer__logo-bracket"> /&gt;</span>
+            <span className="footer__logo-bracket"></span>
+            Roshan
+            <span className="footer__logo-bracket"> </span>
           </button>
           <p className="footer__tagline">
             Frontend Developer — Open to Internships
@@ -71,7 +71,7 @@ const Footer = () => {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p className="footer__copy">
-            © {year} Dadda. Built with React + Vite.
+            © {year} Roshan. Built with React + Vite.
           </p>
           <button className="footer__back-top" onClick={scrollToTop} aria-label="Back to top">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

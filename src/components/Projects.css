@@ -227,22 +227,85 @@
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 820px) {
-  .projects__grid {
-    grid-template-columns: 1fr;
-  }
-}
 
-@media (max-width: 560px) {
+@media (max-width: 780px) {
   .projects {
     padding: 5rem 0;
   }
 
+  .projects__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .project-card__top {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 4rem 0;
+  }
+
+  .projects__header {
+    margin-bottom: 2rem;
+  }
+
+  .projects__grid {
+    gap: 1rem;
+  }
+
+  .project-card {
+    border-radius: 16px;
+  }
+
+  .project-card__top {
+    height: 140px;
+  }
+
+  .project-card__emoji {
+    font-size: 2.75rem;
+  }
+
+  .project-card__body {
+    padding: 1.25rem 1.25rem 0.75rem;
+  }
+
+  .project-card__title {
+    font-size: 1rem;
+  }
+
+  .project-card__desc {
+    font-size: 0.825rem;
+  }
+
   .project-card__footer {
     flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.9rem 1.25rem 1.25rem;
   }
 
   .project-card__btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+  }
+
+  .projects__footer {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+  }
+
+  .projects__github-link {
+    width: 100%;
     justify-content: center;
   }
 }

@@ -1,5 +1,5 @@
 import './Hero.css'
-
+import profile from'../assets/img.jpg'
 const Hero = () => {
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -11,7 +11,8 @@ const Hero = () => {
       <div className="hero__bg-glow" aria-hidden="true" />
 
       <div className="container hero__inner">
-        <div className="hero__badge">
+      <div className="hero__content">
+          <div className="hero__badge">
           <span className="hero__badge-dot" />
           Open to Frontend Internship Opportunities
         </div>
@@ -61,6 +62,8 @@ const Hero = () => {
             <span className="hero__stat-label">Dedication</span>
           </div>
         </div>
+      </div>
+        <img src={profile} alt="Roshan profile" className="hero__image" />
       </div>
 
       <div className="hero__scroll-indicator">

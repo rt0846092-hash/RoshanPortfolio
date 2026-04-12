@@ -40,13 +40,22 @@
 
 /* Content */
 .hero__inner {
-  position: relative;
+   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2rem;
+  flex-direction: row;
+  align-items: center;     
+  justify-content: space-between; 
+  gap: 3rem;
   animation: heroFadeIn 0.8s ease forwards;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;                 
+  min-width: 0;              
 }
 
 @keyframes heroFadeIn {
@@ -221,6 +230,14 @@
   background: linear-gradient(to bottom, var(--accent), transparent);
   animation: scrollAnim 2s ease infinite;
 }
+.hero__image {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00f5ff;
+  flex-shrink: 0; 
+}
 
 @keyframes scrollAnim {
   0% { transform: scaleY(0); transform-origin: top; }
@@ -229,22 +246,85 @@
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
   .hero {
     padding: 5rem 0 6rem;
-    text-align: left;
+  }
+
+  .hero__inner {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero__content {
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero__bio {
+    max-width: 100%;
+  }
+
+  .hero__title {
+    line-height: 1.3;
   }
 
   .hero__stats {
-    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    max-width: 100%;
   }
 
   .hero__stat-number {
     font-size: 1.4rem;
   }
 
+  .hero__image {
+    width: 180px;
+    height: 180px;
+  }
+
   .hero__scroll-indicator {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .hero__bio {
+    font-size: 13px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .hero__stats {
+    gap: 1rem;
+  }
+
+  .hero__stat-number {
+    font-size: 1.2rem;
+  }
+
+  .hero__image {
+    width: 140px;
+    height: 140px;
   }
 }
