@@ -335,3 +335,11 @@
 [data-theme="light"] .form__error {
   color: #c53030;
 }
+
+.form__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}

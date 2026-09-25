@@ -8,7 +8,7 @@ My personal portfolio, built with React and Vite. It showcases my full-stack and
 
 - **This site:** React 19, Vite, CSS3 (no UI frameworks)
 - **Skills shown:** React, Tailwind, Python, Django REST Framework, PostgreSQL, MySQL
-- **Contact form:** [Formspree](https://formspree.io) (optional; falls back to email)
+- **Contact form:** [FormSubmit](https://formsubmit.co), emails messages to my inbox
 - **Fonts:** Syne and DM Sans via Google Fonts
 
 ## Features
@@ -28,13 +28,9 @@ npm install
 npm run dev
 ```
 
-### Contact form setup (optional)
+### Contact form
 
-1. Create a free form at [formspree.io](https://formspree.io) and copy its ID (the part after `/f/`).
-2. Copy `.env.example` to `.env` and set `VITE_FORMSPREE_ID`.
-3. When deploying, add the same variable in your Vercel or Netlify project settings.
-
-Without an ID, the form opens the visitor's email app with the message filled in.
+Messages from the contact form are emailed to rt0846092@gmail.com through [FormSubmit](https://formsubmit.co), with no account or API key needed. The very first message triggers an activation email from FormSubmit; click **Activate Form** once and every message after that arrives in the inbox. To change the address, edit `EMAIL` in `src/components/Contact.jsx`.
 
 ## Project structure
 

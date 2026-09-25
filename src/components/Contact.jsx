@@ -2,7 +2,9 @@ import { useState } from 'react'
 import './Contact.css'
 
 const EMAIL = 'rt0846092@gmail.com'
-const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID
+// Messages are emailed to EMAIL through FormSubmit (https://formsubmit.co).
+// The first message sends an activation email to that inbox; click "Activate" once.
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${EMAIL}`
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -14,27 +16,37 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!e.currentTarget.checkValidity()) {
-      e.currentTarget.reportValidity()
+    const formEl = e.currentTarget
+    if (!formEl.checkValidity()) {
+      formEl.reportValidity()
       return
     }
 
-    // Without a Formspree ID, open the visitor's email app instead of pretending to send.
-    if (!FORMSPREE_ID) {
-      const subject = encodeURIComponent(`Portfolio message from ${form.name}`)
-      const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`)
-      window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`
+    // Hidden field only bots fill in; pretend success and send nothing.
+    if (formEl.elements._honey?.value) {
+      setStatus('sent')
       return
     }
 
     setStatus('sending')
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const res = await fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          _replyto: form.email,
+          _subject: `New portfolio message from ${form.name}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
       })
-      if (!res.ok) throw new Error(`Request failed: ${res.status}`)
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok || String(data.success) !== 'true') {
+        throw new Error(data.message || `Request failed: ${res.status}`)
+      }
       setStatus('sent')
       setForm({ name: '', email: '', message: '' })
       setTimeout(() => setStatus('idle'), 5000)
@@ -125,6 +137,15 @@ const Contact = () => {
             ) : (
               <form className="contact__form" onSubmit={handleSubmit} noValidate>
                 <h3 className="contact__form-title">Send a Message</h3>
+
+                <input
+                  type="text"
+                  name="_honey"
+                  className="form__honeypot"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
 
                 <div className="form__group">
                   <label className="form__label" htmlFor="name">Name</label>
