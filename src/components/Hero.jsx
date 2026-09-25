@@ -1,5 +1,5 @@
 import './Hero.css'
-import profile from'../assets/img.jpg'
+import profile from '../assets/profile.webp'
 const Hero = () => {
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -14,19 +14,19 @@ const Hero = () => {
       <div className="hero__content">
           <div className="hero__badge">
           <span className="hero__badge-dot" />
-          Open to Frontend Internship Opportunities
+          Open to Full-Stack Internship Opportunities
         </div>
 
         <h1 className="hero__title">
           Hi, I'm <span className="hero__name">Roshan</span>
           <br />
-          <span className="hero__role">Frontend Developer</span>
+          <span className="hero__role">Full-Stack Developer</span>
         </h1>
 
         <p className="hero__bio">
-          I build fast, clean, and accessible web interfaces using React & modern CSS.
-          Passionate about crafting smooth user experiences — from pixel-perfect UIs
-          to performant, maintainable code.
+          I build complete web applications, from responsive React interfaces to
+          Django REST APIs and SQL databases. I care about clean UIs, well-structured
+          APIs, and code that stays easy to maintain.
         </p>
 
         <div className="hero__actions">
@@ -53,17 +53,17 @@ const Hero = () => {
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
-            <span className="hero__stat-number">5+</span>
+            <span className="hero__stat-number">10+</span>
             <span className="hero__stat-label">Technologies</span>
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
-            <span className="hero__stat-number">100%</span>
-            <span className="hero__stat-label">Dedication</span>
+            <span className="hero__stat-number">UI → DB</span>
+            <span className="hero__stat-label">End-to-End</span>
           </div>
         </div>
       </div>
-        <img src={profile} alt="Roshan profile" className="hero__image" />
+        <img src={profile} alt="Roshan Tamang" className="hero__image" width="280" height="280" />
       </div>
 
       <div className="hero__scroll-indicator">

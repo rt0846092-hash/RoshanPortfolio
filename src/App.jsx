@@ -8,10 +8,17 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState(() => {
+    try {
+      const saved = localStorage.getItem('theme')
+      if (saved === 'dark' || saved === 'light') return saved
+    } catch { /* storage unavailable */ }
+    return window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  })
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
+    try { localStorage.setItem('theme', theme) } catch { /* storage unavailable */ }
   }, [theme])
 
   const toggleTheme = () => {

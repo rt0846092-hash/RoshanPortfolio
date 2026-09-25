@@ -321,3 +321,17 @@
     font-size: 1.2rem;
   }
 }
+.form__error {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 90, 90, 0.35);
+  background: rgba(255, 90, 90, 0.08);
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+[data-theme="light"] .form__error {
+  color: #c53030;
+}

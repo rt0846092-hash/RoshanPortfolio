@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import './Contact.css'
 
+const EMAIL = 'rt0846092@gmail.com'
+const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID
+
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
@@ -9,15 +12,35 @@ const Contact = () => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!e.currentTarget.checkValidity()) {
+      e.currentTarget.reportValidity()
+      return
+    }
+
+    // Without a Formspree ID, open the visitor's email app instead of pretending to send.
+    if (!FORMSPREE_ID) {
+      const subject = encodeURIComponent(`Portfolio message from ${form.name}`)
+      const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`)
+      window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`
+      return
+    }
+
     setStatus('sending')
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error(`Request failed: ${res.status}`)
       setStatus('sent')
       setForm({ name: '', email: '', message: '' })
-      setTimeout(() => setStatus('idle'), 4000)
-    }, 1200)
+      setTimeout(() => setStatus('idle'), 5000)
+    } catch {
+      setStatus('error')
+    }
   }
 
   const contactLinks = [
@@ -29,8 +52,8 @@ const Contact = () => {
         </svg>
       ),
       label: 'Email',
-      value: 'rt0846092@gmail.com',
-      href: 'mailto:rt0846092@gmail.com',
+      value: EMAIL,
+      href: `mailto:${EMAIL}`,
     },
     {
       icon: (
@@ -39,8 +62,8 @@ const Contact = () => {
         </svg>
       ),
       label: 'GitHub',
-      value: 'https://github.com/rt0846092-hash',
-      href: 'https://github.com',
+      value: 'github.com/rt0846092-hash',
+      href: 'https://github.com/rt0846092-hash',
     },
     {
       icon: (
@@ -49,8 +72,8 @@ const Contact = () => {
         </svg>
       ),
       label: 'LinkedIn',
-      value: 'https://linkedin.com/in/roshan-tamang-663015283',
-      href: 'https://linkedin.com',
+      value: 'linkedin.com/in/roshan-tamang-663015283',
+      href: 'https://www.linkedin.com/in/roshan-tamang-663015283',
     },
   ]
 
@@ -63,7 +86,7 @@ const Contact = () => {
             <p className="section-label">Get In Touch</p>
             <h2 className="section-title">Let's Work<br />Together</h2>
             <p className="contact__desc">
-              I'm actively looking for frontend internship opportunities.
+              I'm actively looking for full-stack and frontend internship opportunities.
               Whether you have a question, a project idea, or just want to
               say hi — my inbox is always open!
             </p>
@@ -144,6 +167,12 @@ const Contact = () => {
                     required
                   />
                 </div>
+
+                {status === 'error' && (
+                  <p className="form__error" role="alert">
+                    Your message didn't send. Try again, or email me directly at {EMAIL}.
+                  </p>
+                )}
 
                 <button
                   type="submit"

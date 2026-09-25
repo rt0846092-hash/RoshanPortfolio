@@ -3,27 +3,29 @@ import './Projects.css'
 const projects = [
   {
     id: 1,
-    title: 'Expense Tracker App',
+    title: 'Banana Education Consultancy',
     description:
-      'A full-featured expense tracking app with category filtering, budget goals, and visual charts to monitor your monthly spending habits.',
-    tags: ['React', 'JavaScript', 'CSS3', 'localStorage'],
-    liveDemo: 'https://expense-tracer-by-daddaa.vercel.app/',
-    github: 'https://github.com/rt0846092-hash/expenseTracerByDaddaa.git',
+      'A study-abroad consultancy platform with a public site that captures student enquiries and a private back office for staff. New students are auto-assigned to a counsellor, who tracks calls, university applications, and documents. Role-based access keeps each counsellor to their own students, while the owner gets reports and CSV exports. Covered by 75 automated tests.',
+    tags: ['React', 'Django REST', 'PostgreSQL', 'Tailwind', 'JWT'],
+    liveDemo: 'https://banana-web-crk2.onrender.com',
+    github: 'https://github.com/rt0846092-hash/BananaEducationConsaltency',
     featured: true,
-    gradient: 'linear-gradient(135deg, #0070f3 0%, #00d4ff 100%)',
-    emoji: '💰',
+    badge: 'Full-Stack',
+    gradient: 'linear-gradient(135deg, #0B2340 0%, #f5c518 100%)',
+    emoji: '🎓',
   },
   {
     id: 2,
-    title: 'E-commerce Website',
+    title: 'Income & Expense Tracker',
     description:
-      'A clean and responsive e-commerce storefront with product listings, cart management, and a smooth checkout UI flow.',
-    tags: ['React', 'JavaScript', 'CSS3', 'Context API'],
-    liveDemo: 'https://ecomerce-by-dadda.vercel.app/',
-    github: 'https://github.com/rt0846092-hash/EcomerceByDadda.git',
+      'A multi-user money tracker with secure sign-in, so the same account works on phone and laptop. Each entry keeps the currency it was made in and converts live to your chosen display currency. Includes a charts dashboard and a remittance tracker that shows the fee lost when sending money between countries.',
+    tags: ['React', 'Django REST', 'MySQL', 'Tailwind', 'Recharts'],
+    liveDemo: 'https://expense-tracker-1tm3vqa4t-rt0846092-3762s-projects.vercel.app',
+    github: 'https://github.com/rt0846092-hash/personalExpense_tracer',
     featured: true,
-    gradient: 'linear-gradient(135deg, #7928ca 0%, #ff0080 100%)',
-    emoji: '🛍️',
+    badge: 'Full-Stack',
+    gradient: 'linear-gradient(135deg, #0070f3 0%, #00d4ff 100%)',
+    emoji: '💰',
   },
   {
     id: 3,
@@ -32,7 +34,7 @@ const projects = [
       'Real-time weather dashboard using the OpenWeather API. Search any city for live temperature, humidity, and 5-day forecasts.',
     tags: ['React', 'REST API', 'HTML5', 'CSS3'],
     liveDemo: 'https://weather-app-by-daddaa.vercel.app/',
-    github: 'https://github.com/rt0846092-hash/WeatherAppByDaddaa.git',
+    github: 'https://github.com/rt0846092-hash/WeatherAppByDaddaa',
     featured: false,
     gradient: 'linear-gradient(135deg, #17ead9 0%, #6078ea 100%)',
     emoji: '🌦️',
@@ -43,8 +45,8 @@ const projects = [
     description:
       'A personal blogging platform with markdown support, post categories, and a minimalist reading experience built from scratch.',
     tags: ['React', 'CSS3', 'Markdown', 'Vite'],
-    liveDemo: 'https://github.com/rt0846092-hash/DaddaBlog.git',
-    github: '#',
+    liveDemo: null,
+    github: 'https://github.com/rt0846092-hash/DaddaBlog',
     featured: false,
     gradient: 'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
     emoji: '✍️',
@@ -66,8 +68,8 @@ const ProjectCard = ({ project }) => (
     <div className="project-card__body">
       <div className="project-card__header">
         <h3 className="project-card__title">{project.title}</h3>
-        {project.featured && (
-          <span className="project-card__badge">Featured</span>
+        {project.badge && (
+          <span className="project-card__badge">{project.badge}</span>
         )}
       </div>
 
@@ -81,6 +83,7 @@ const ProjectCard = ({ project }) => (
     </div>
 
     <div className="project-card__footer">
+      {project.liveDemo && (
       <a
         href={project.liveDemo}
         className="project-card__btn project-card__btn--demo"
@@ -94,6 +97,7 @@ const ProjectCard = ({ project }) => (
         </svg>
         Live Demo
       </a>
+      )}
       <a
         href={project.github}
         className="project-card__btn project-card__btn--github"
@@ -117,8 +121,8 @@ const Projects = () => {
           <p className="section-label">My Work</p>
           <h2 className="section-title">Featured Projects</h2>
           <p className="section-subtitle">
-            A selection of projects I've built — showcasing my skills in React,
-            JavaScript, and modern frontend development.
+            A selection of projects I've built, from full-stack Django and React
+            applications to frontend-only React apps.
           </p>
         </div>
 

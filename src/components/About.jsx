@@ -5,7 +5,11 @@ const skills = [
   { name: 'CSS3',       icon: '🎨', category: 'Frontend' },
   { name: 'JavaScript', icon: '⚡', category: 'Frontend' },
   { name: 'React',      icon: '⚛️', category: 'Frontend' },
+  { name: 'Tailwind',   icon: '💨', category: 'Frontend' },
   { name: 'Python',     icon: '🐍', category: 'Backend'  },
+  { name: 'Django REST',icon: '🔌', category: 'Backend'  },
+  { name: 'PostgreSQL', icon: '🐘', category: 'Database' },
+  { name: 'MySQL',      icon: '🗄️', category: 'Database' },
   { name: 'C',          icon: '⚙️', category: 'Systems'  },
   { name: 'GitHub',     icon: '🐙', category: 'Tools'    },
   { name: 'Deployment', icon: '🚀', category: 'Tools'    },
@@ -27,22 +31,23 @@ const About = () => {
           {/* Left: Bio */}
           <div className="about__bio">
             <p className="section-label">About Me</p>
-            <h2 className="section-title">Turning Ideas Into<br />Real Interfaces</h2>
+            <h2 className="section-title">Turning Ideas Into<br />Working Products</h2>
             <p className="about__text">
-              I'm a frontend developer focused on building clean, responsive, and
-              user-friendly web experiences. My main stack is <strong>HTML, CSS,
-              JavaScript, and React</strong> — I care deeply about writing readable
-              code and building UIs that just feel right.
+              I'm a full-stack developer who enjoys building an application from
+              the first screen down to the database. On the frontend I work with
+              <strong> HTML, CSS, JavaScript, React, and Tailwind</strong>, and I care about
+              interfaces that are clean, responsive, and easy to use.
             </p>
             <p className="about__text">
-              Beyond the frontend, I'm curious about how things work under the hood.
-              I've explored <strong>Python</strong> for scripting and basic backend
-              logic, and <strong>C</strong> for understanding memory management and
-              low-level concepts — giving me a broader foundation than most frontend
-              developers at my level.
+              On the backend I build REST APIs with <strong>Python and Django
+              REST Framework</strong>, including sign-in, role-based access, and
+              automated tests, backed by <strong>PostgreSQL</strong> or
+              <strong> MySQL</strong>. I deploy my projects on Render and Vercel. Learning <strong>C</strong> gave me a solid
+              understanding of memory and low-level concepts, which helps me write
+              more efficient code across the stack.
             </p>
             <p className="about__text">
-              I'm actively seeking a <strong>frontend internship</strong> where I
+              I'm actively seeking a <strong>full-stack or frontend internship</strong> where I
               can contribute, grow, and work with experienced developers who push
               me to level up.
             </p>
@@ -52,7 +57,7 @@ const About = () => {
                 { icon: '🎯', text: 'Detail-oriented UI builder' },
                 { icon: '📚', text: 'Fast learner & problem solver' },
                 { icon: '🤝', text: 'Team player, open to feedback' },
-                { icon: '🌍', text: 'Curious about the full stack' },
+                { icon: '🔗', text: 'Comfortable from UI to database' },
               ].map((item, i) => (
                 <div key={i} className="about__highlight">
                   <span>{item.icon}</span>

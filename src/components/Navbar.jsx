@@ -7,7 +7,9 @@ const Navbar = ({ theme, toggleTheme }) => {
   const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false
+    const update = () => {
+      ticking = false
       setScrolled(window.scrollY > 20)
 
       const sections = ['home', 'about', 'projects', 'contact']
@@ -22,7 +24,15 @@ const Navbar = ({ theme, toggleTheme }) => {
         }
       }
     }
-    window.addEventListener('scroll', handleScroll)
+    // Run at most once per animation frame instead of on every scroll event
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true
+        window.requestAnimationFrame(update)
+      }
+    }
+    update()
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
