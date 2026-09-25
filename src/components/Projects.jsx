@@ -45,7 +45,7 @@ const projects = [
     description:
       'A personal blogging platform with markdown support, post categories, and a minimalist reading experience built from scratch.',
     tags: ['React', 'CSS3', 'Markdown', 'Vite'],
-    liveDemo: null,
+    liveDemo: 'https://dadda-blog-fobkz5vzx-rt0846092-3762s-projects.vercel.app',
     github: 'https://github.com/rt0846092-hash/DaddaBlog',
     featured: false,
     gradient: 'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
