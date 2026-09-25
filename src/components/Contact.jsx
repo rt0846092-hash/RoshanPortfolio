@@ -2,9 +2,10 @@ import { useState } from 'react'
 import './Contact.css'
 
 const EMAIL = 'rt0846092@gmail.com'
-// Messages are emailed to EMAIL through FormSubmit (https://formsubmit.co).
-// The first message sends an activation email to that inbox; click "Activate" once.
-const FORM_ENDPOINT = `https://formsubmit.co/ajax/${EMAIL}`
+// Messages are emailed to EMAIL through Web3Forms (https://web3forms.com).
+// This access key is public by design: it can only send mail to the owner's inbox.
+const WEB3FORMS_KEY = 'c745094e-655e-463d-8aa0-05b896b6bcbe'
+const FORM_ENDPOINT = 'https://api.web3forms.com/submit'
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -34,17 +35,16 @@ const Contact = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New portfolio message from ${form.name}`,
+          from_name: 'Roshan Portfolio',
           name: form.name,
           email: form.email,
           message: form.message,
-          _replyto: form.email,
-          _subject: `New portfolio message from ${form.name}`,
-          _template: 'table',
-          _captcha: 'false',
         }),
       })
       const data = await res.json().catch(() => ({}))
-      if (!res.ok || String(data.success) !== 'true') {
+      if (!res.ok || data.success !== true) {
         throw new Error(data.message || `Request failed: ${res.status}`)
       }
       setStatus('sent')

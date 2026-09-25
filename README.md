@@ -8,7 +8,7 @@ My personal portfolio, built with React and Vite. It showcases my full-stack and
 
 - **This site:** React 19, Vite, CSS3 (no UI frameworks)
 - **Skills shown:** React, Tailwind, Python, Django REST Framework, PostgreSQL, MySQL
-- **Contact form:** [FormSubmit](https://formsubmit.co), emails messages to my inbox
+- **Contact form:** [Web3Forms](https://web3forms.com), emails messages to my inbox
 - **Fonts:** Syne and DM Sans via Google Fonts
 
 ## Features
@@ -30,7 +30,7 @@ npm run dev
 
 ### Contact form
 
-Messages from the contact form are emailed to rt0846092@gmail.com through [FormSubmit](https://formsubmit.co), with no account or API key needed. The very first message triggers an activation email from FormSubmit; click **Activate Form** once and every message after that arrives in the inbox. To change the address, edit `EMAIL` in `src/components/Contact.jsx`.
+Messages from the contact form are emailed to rt0846092@gmail.com through [Web3Forms](https://web3forms.com). The access key lives in `src/components/Contact.jsx`; it is public by design and can only deliver mail to the inbox it was created for. A hidden honeypot field filters out spam bots.
 
 ## Project structure
 
