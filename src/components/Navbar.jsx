@@ -12,7 +12,7 @@ const Navbar = ({ theme, toggleTheme }) => {
       ticking = false
       setScrolled(window.scrollY > 20)
 
-      const sections = ['home', 'about', 'projects', 'contact']
+      const sections = ['home', 'about', 'services', 'projects', 'contact']
       for (const id of sections) {
         const el = document.getElementById(id)
         if (el) {
@@ -45,6 +45,7 @@ const Navbar = ({ theme, toggleTheme }) => {
   const navLinks = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'services', label: 'Services' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
   ]

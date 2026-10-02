@@ -14,7 +14,7 @@ const Hero = () => {
       <div className="hero__content">
           <div className="hero__badge">
           <span className="hero__badge-dot" />
-          Open to Full-Stack Internship Opportunities
+          Available for freelance projects
         </div>
 
         <h1 className="hero__title">
@@ -24,9 +24,9 @@ const Hero = () => {
         </h1>
 
         <p className="hero__bio">
-          I build complete web applications, from responsive React interfaces to
-          Django REST APIs and SQL databases. I care about clean UIs, well-structured
-          APIs, and code that stays easy to maintain.
+          I build fast, reliable web applications for businesses, from the screens
+          your customers use to the database behind them. You get one developer who
+          handles the whole thing and delivers it tested, deployed, and ready to use.
         </p>
 
         <div className="hero__actions">

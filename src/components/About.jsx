@@ -42,22 +42,23 @@ const About = () => {
               On the backend I build REST APIs with <strong>Python and Django
               REST Framework</strong>, including sign-in, role-based access, and
               automated tests, backed by <strong>PostgreSQL</strong> or
-              <strong> MySQL</strong>. I deploy my projects on Render and Vercel. Learning <strong>C</strong> gave me a solid
-              understanding of memory and low-level concepts, which helps me write
-              more efficient code across the stack.
+              <strong> MySQL</strong>, and I deploy to Render and Vercel. A background
+              in <strong>C</strong> means I understand what happens under the hood,
+              which helps me write efficient, dependable code.
             </p>
             <p className="about__text">
-              I'm actively seeking a <strong>full-stack or frontend internship</strong> where I
-              can contribute, grow, and work with experienced developers who push
-              me to level up.
+              I work directly with clients from the first conversation to launch. I'll
+              help you decide what to build, keep you updated as it comes together,
+              and hand over a <strong>working, tested product</strong> that's easy to
+              maintain and grow.
             </p>
 
             <div className="about__highlights">
               {[
-                { icon: '🎯', text: 'Detail-oriented UI builder' },
-                { icon: '📚', text: 'Fast learner & problem solver' },
-                { icon: '🤝', text: 'Team player, open to feedback' },
-                { icon: '🔗', text: 'Comfortable from UI to database' },
+                { icon: '💬', text: 'Clear communication, regular updates' },
+                { icon: '🧪', text: 'Tested code, fewer surprises' },
+                { icon: '🚀', text: 'Deployed and ready to use' },
+                { icon: '🔗', text: 'One developer, UI to database' },
               ].map((item, i) => (
                 <div key={i} className="about__highlight">
                   <span>{item.icon}</span>

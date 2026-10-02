@@ -48,7 +48,7 @@ const Footer = () => {
             <span className="footer__logo-bracket"> </span>
           </button>
           <p className="footer__tagline">
-            Full-Stack Developer — Open to Internships
+            Full-Stack Developer — Available for freelance work
           </p>
         </div>
 

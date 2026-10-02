@@ -1,6 +1,6 @@
 # Roshan Tamang — Full-Stack Developer Portfolio
 
-My personal portfolio, built with React and Vite. It showcases my full-stack and frontend projects, the technologies I work with, and a way to get in touch.
+My personal portfolio, built with React and Vite. It shows the services I offer as a freelance full-stack developer, the projects I've built, and how to get in touch.
 
 **Live site:** _add your deployed link here_
 

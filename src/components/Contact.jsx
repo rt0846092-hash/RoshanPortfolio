@@ -96,11 +96,11 @@ const Contact = () => {
           {/* Left */}
           <div className="contact__info">
             <p className="section-label">Get In Touch</p>
-            <h2 className="section-title">Let's Work<br />Together</h2>
+            <h2 className="section-title">Have a Project<br />in Mind?</h2>
             <p className="contact__desc">
-              I'm actively looking for full-stack and frontend internship opportunities.
-              Whether you have a question, a project idea, or just want to
-              say hi — my inbox is always open!
+              Tell me what you need: a new web app, an online store, a website for
+              your business, or improvements to something you already have. I'll get
+              back to you with questions, a plan, and a quote.
             </p>
 
             <div className="contact__links">
@@ -181,7 +181,7 @@ const Contact = () => {
                     id="message"
                     name="message"
                     className="form__input form__textarea"
-                    placeholder="Tell me about the opportunity or project..."
+                    placeholder="What do you need built? Include your timeline and budget if you know them."
                     rows={5}
                     value={form.message}
                     onChange={handleChange}
