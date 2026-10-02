@@ -15,6 +15,19 @@ const projects = [
     emoji: '🎓',
   },
   {
+    id: 5,
+    title: 'Voltcart',
+    description:
+      'An electronics store with two ways to pay: Stripe card checkout or cash on delivery. Stock is reserved in a single database operation at checkout, so the last item can never be sold twice, and Stripe webhooks confirm payments. Staff manage orders, products, and stock from a built-in dashboard. Covered by 30 automated tests.',
+    tags: ['React', 'Django REST', 'PostgreSQL', 'Stripe', 'Tailwind'],
+    liveDemo: 'https://volt-cart-gamma.vercel.app',
+    github: 'https://github.com/rt0846092-hash/voltCart',
+    featured: true,
+    badge: 'Full-Stack',
+    gradient: 'linear-gradient(135deg, #0c0c0d 0%, #d2f53c 100%)',
+    emoji: '⚡',
+  },
+  {
     id: 2,
     title: 'Income & Expense Tracker',
     description:
@@ -31,8 +44,8 @@ const projects = [
     id: 3,
     title: 'Weather App',
     description:
-      'Real-time weather dashboard using the OpenWeather API. Search any city for live temperature, humidity, and 5-day forecasts.',
-    tags: ['React', 'REST API', 'HTML5', 'CSS3'],
+      'Live weather for any city or your current location, using the OpenWeather API. Shows local time, sunrise and sunset, and a 5-day forecast with real daily highs and lows calculated from 3-hour data.',
+    tags: ['React', 'REST API', 'Geolocation', 'CSS3'],
     liveDemo: 'https://weather-app-by-daddaa.vercel.app/',
     github: 'https://github.com/rt0846092-hash/WeatherAppByDaddaa',
     featured: false,
@@ -43,8 +56,8 @@ const projects = [
     id: 4,
     title: 'DaddaBlog',
     description:
-      'A personal blogging platform with markdown support, post categories, and a minimalist reading experience built from scratch.',
-    tags: ['React', 'CSS3', 'Markdown', 'Vite'],
+      'A blog with search, category filters, and shareable links for every post. The reading page has a progress bar, related posts, and dark mode that remembers your choice.',
+    tags: ['React', 'CSS3', 'Routing', 'Vite'],
     liveDemo: 'https://dadda-blog-fobkz5vzx-rt0846092-3762s-projects.vercel.app',
     github: 'https://github.com/rt0846092-hash/DaddaBlog',
     featured: false,
