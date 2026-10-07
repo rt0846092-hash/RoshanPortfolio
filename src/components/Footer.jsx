@@ -43,9 +43,9 @@ const Footer = () => {
       <div className="container footer__inner">
         <div className="footer__brand">
           <button className="footer__logo" onClick={scrollToTop}>
-            <span className="footer__logo-bracket"></span>
+            <span className="footer__logo-bracket">&lt;</span>
             Roshan
-            <span className="footer__logo-bracket"> </span>
+            <span className="footer__logo-bracket"> /&gt;</span>
           </button>
           <p className="footer__tagline">
             Full-Stack Developer — Available for freelance work

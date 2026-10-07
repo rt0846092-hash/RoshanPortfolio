@@ -58,7 +58,7 @@ const projects = [
     description:
       'A blog with search, category filters, and shareable links for every post. The reading page has a progress bar, related posts, and dark mode that remembers your choice.',
     tags: ['React', 'CSS3', 'Routing', 'Vite'],
-    liveDemo: 'https://dadda-blog-fobkz5vzx-rt0846092-3762s-projects.vercel.app',
+    liveDemo: 'https://dadda-blog.vercel.app',
     github: 'https://github.com/rt0846092-hash/DaddaBlog',
     featured: false,
     gradient: 'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',

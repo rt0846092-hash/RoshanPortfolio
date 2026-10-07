@@ -110,6 +110,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             className={`navbar__hamburger ${menuOpen ? 'navbar__hamburger--open' : ''}`}
             onClick={() => setMenuOpen(prev => !prev)}
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
           >
             <span />
             <span />

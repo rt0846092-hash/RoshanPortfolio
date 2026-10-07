@@ -2,7 +2,7 @@
 
 My personal portfolio, built with React and Vite. It shows the services I offer as a freelance full-stack developer, the projects I've built, and how to get in touch.
 
-**Live site:** _add your deployed link here_
+**Live site:** [roshan-portfolio-rho-three.vercel.app](https://roshan-portfolio-rho-three.vercel.app)
 
 ## Tech stack
 
