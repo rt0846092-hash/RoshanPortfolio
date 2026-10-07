@@ -33,7 +33,7 @@ const projects = [
     description:
       'A multi-user money tracker with secure sign-in, so the same account works on phone and laptop. Each entry keeps the currency it was made in and converts live to your chosen display currency. Includes a charts dashboard and a remittance tracker that shows the fee lost when sending money between countries.',
     tags: ['React', 'Django REST', 'MySQL', 'Tailwind', 'Recharts'],
-    liveDemo: 'https://expense-tracker-1tm3vqa4t-rt0846092-3762s-projects.vercel.app',
+    liveDemo: 'https://frontend-khaki-five-57.vercel.app',
     github: 'https://github.com/rt0846092-hash/personalExpense_tracer',
     featured: true,
     badge: 'Full-Stack',
